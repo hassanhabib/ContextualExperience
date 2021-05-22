@@ -1,0 +1,10 @@
+﻿@page "/"
+@using ContextualExperience.Models.Views.OptionViews
+
+<select @onchange="SetComponent">
+    <Iterations Items="OptionViews" T="OptionView" Context="optionView">
+        <option value="@optionView.Value">@optionView.Text</option>
+    </Iterations>
+</select>
+
+<DynamicComponent Type="SelectedComponent" />
